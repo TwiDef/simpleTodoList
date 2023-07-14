@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import TodoItems from "./TodoItems";
 
 class TodoList extends Component {
     constructor(props) {
@@ -19,6 +20,7 @@ class TodoList extends Component {
                 key: Date.now()
             })
         }
+        this._inputElement.value = ""
 
         this.setState({
             items: itemArray
@@ -37,6 +39,7 @@ class TodoList extends Component {
                         <button type="submit">ok</button>
                     </form>
                 </div>
+                <TodoItems entries={this.state.items} />
             </div>
         )
     }
